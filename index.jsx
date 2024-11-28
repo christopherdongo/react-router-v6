@@ -1,20 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Vans from "./pages/Vans/Vans"
-import VanDetail from "./pages/Vans/VanDetail"
-import Dashboard from "./pages/Host/Dashboard"
-import Income from "./pages/Host/Income"
-import Reviews from "./pages/Host/Reviews"
-import HostVans from "./pages/Host/HostVans"
-import HostVanDetail from "./pages/Host/HostVanDetail"
-import HostVanInfo from "./pages/Host/HostVanInfo"
-import HostVanPricing from "./pages/Host/HostVanPricing"
-import HostVanPhotos from "./pages/Host/HostVanPhotos"
-import Layout from "./components/Layout"
-import HostLayout from "./components/HostLayout"
+import Home from "./src/pages/Home"
+import About from "./src/pages/About"
+import Vans from "./src/pages/Vans/Vans"
+import VanDetail from "./src/pages/Vans/VanDetail"
+import Dashboard from "./src/pages/Host/Dashboard"
+import Income from "./src/pages/Host/Income"
+import Reviews from "./src/pages/Host/Reviews"
+import HostVans from "./src/pages/Host/HostVans"
+import HostVanDetail from "./src/pages/Host/HostVanDetail"
+import HostVanInfo from "./src/pages/Host/HostVanInfo"
+import HostVanPricing from "./src/pages/Host/HostVanPricing"
+import HostVanPhotos from "./src/pages/Host/HostVanPhotos"
+import Layout from "./src/components/Layout"
+import HostLayout from "./src/components/HostLayout"
+import {NotFound} from './src/pages/NotFound'
 
 import "./server"
 
@@ -39,6 +40,7 @@ function App() {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
