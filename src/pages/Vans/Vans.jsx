@@ -18,9 +18,11 @@ export default function Vans() {
 
 
 
-    const displayedVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans
+    const displayedVans = typeFilter ? vans?.filter(van => van.type === typeFilter) : vans
 
-    const vanElements = displayedVans.map(van => (
+    console.log('vans', vans)
+
+    const vanElements = displayedVans?.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={van.id}
                 state={{ search: `?${searchParams.toString()}`, type: typeFilter }}
